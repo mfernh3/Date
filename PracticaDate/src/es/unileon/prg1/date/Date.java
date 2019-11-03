@@ -189,6 +189,57 @@ public class Date {
 			return iDR;
 		}
 		
+		public String getSeasonName(){
+			String n = " ";
+			switch(this.month){
+				case 1: //next
+				case 2:
+					n="Invierno";
+					break;
+				case 3:
+					if(this.day<21){
+						n="Invierno";
+					} else {
+						n="Primavera";
+					}
+					break;
+				case 4: //next
+				case 5: 
+					n="Primavera";
+					break;
+				case 6:
+					if(this.day<21){
+						n="Primavera";
+					} else {
+						n="Verano";
+					}
+					break;
+				case 7: //next
+				case 8: 
+					n="Verano";
+					break;
+				case 9:
+					if(this.day<23){
+						n="Verano";
+					} else {
+						n="Otoño";
+					}
+					break;
+				case 10: //next
+				case 11:				
+					n="Otoño";
+					break;
+				case 12:
+					if(this.day<21){
+						n="Otoño";
+					} else {
+						n="Invierno";
+					}
+					break;
+			}
+			return n;
+		}
+		
 		
 		
 		
