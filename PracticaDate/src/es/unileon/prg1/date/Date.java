@@ -164,6 +164,31 @@ public class Date {
 			return name;
 		}
 		
+		boolean isDayRight(int day){
+			boolean iDR = false;
+			switch(this.month){
+				case 1: //next
+				case 3: //next
+				case 5: //next
+				case 7: //next
+				case 8: //next
+				case 10: //next
+				case 12:
+					iDR = ((day>=1) && (day<=31));
+					break;
+				case 4: //next
+				case 6: //next
+				case 9: //next
+				case 11:
+					iDR = ((day>=1) && (day<=30));
+					break;
+				case 2:
+					iDR = ((day>=1) && (day<=28));
+					break;
+			}
+			return iDR;
+		}
+		
 		
 		
 		
