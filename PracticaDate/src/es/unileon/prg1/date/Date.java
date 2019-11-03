@@ -240,7 +240,30 @@ public class Date {
 			return n;
 		}
 		
-		
+		public String getMonthsLeft(){
+			StringBuilder months;
+			int month;
+			months = new StringBuilder();
+			month = this.month;
+			for (int i = this.month;i<12;i++){
+				this.month=this.month+1;
+				months.append(this.getMonthName() + " ");
+			}
+			this.month=month; //Como en el bucle for se modifica el valor de this.month previamente guarde el valor original para volver a ponerlo ahora
+			return months.toString();
+		}
+
+		public String getDaysLeftOfMonth(){
+			StringBuilder restantes;
+			int dia=this.day;
+			restantes = new StringBuilder();
+			dia=this.day;
+			while(this.isDayRight(++this.day)==true){
+				restantes.append(this.toString() + " ");
+			}
+			this.day=dia; //Como en el bucle while se modifica el valor de this.dia previamente guarde el valor original para volver a ponerlo ahora
+			return restantes.toString();
+		}
 		
 		
 	}
