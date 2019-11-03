@@ -265,6 +265,90 @@ public class Date {
 			return restantes.toString();
 		}
 		
-		
+		public String getMonthsSameDays(){
+			String mismosDias = " ";
+			switch(this.month){
+				case 1:
+					mismosDias = "Marzo Mayo Julio Agosto Octubre Diciembre";
+					break;
+				case 2:
+					mismosDias = " ";
+					break;
+				case 3:
+					mismosDias = "Enero Mayo Julio Agosto Octubre Diciembre";
+					break;
+				case 4:
+					mismosDias = "Junio Septiembre Noviembre";
+					break;
+				case 5:
+					mismosDias = "Enero Marzo Julio Agosto Octubre Diciembre";
+					break;
+				case 6:
+					mismosDias = "Abril Septiembre Noviembre";
+					break;
+				case 7:
+					mismosDias = "Enero Marzo Mayo Agosto Octubre Diciembre";
+					break;
+				case 8:
+					mismosDias = "Enero Marzo Mayo Julio Octubre Diciembre";
+					break;
+				case 9:
+					mismosDias = "Abril Junio Noviembre";
+					break;
+				case 10:
+					mismosDias = "Enero Marzo Mayo Julio Agosto Diciembre";
+					break;
+				case 11:
+					mismosDias = "Abril Junio Septiembre";
+					break;
+				case 12:
+					mismosDias = "Enero Marzo Mayo Julio Agosto Octubre";
+					break;
+			}
+			return mismosDias;
+		}
+				
+		public int daysPast(){
+			int total=0;
+			switch(this.month){
+				case 1:
+					total = this.day;
+					break;
+				case 2:
+					total = this.day+31;
+					break;
+				case 3:
+					total = this.day+31+28;
+					break;
+				case 4:
+					total = this.day+2*31+28;
+					break;
+				case 5:
+					total = this.day+2*31+28+30;
+					break;
+				case 6:
+					total = this.day+3*31+28+30;
+					break;
+				case 7:
+					total = this.day+3*31+28+2*30;
+					break;
+				case 8:
+					total = this.day+4*31+28+2*30;
+					break;
+				case 9:
+					total = this.day+5*31+28+2*30;
+					break;
+				case 10:
+					total = this.day+5*31+28+3*30;
+					break;
+				case 11:
+					total = this.day+6*31+28+3*30;
+					break;
+				case 12:
+					total = this.day+6*31+28+4*30;
+					break;
+			}
+			return total;
+		}
 	}
 }
